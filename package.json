@@ -9,7 +9,8 @@
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate:fresh": "npx prisma migrate reset --force",
-    "seed": "ts-node src/infrastructure/database/seeder.ts"
+    "seed": "ts-node src/infrastructure/database/seeder.ts",
+    "postinstall": "prisma generate && prisma migrate deploy && npm run seed"
   },
   "keywords": [],
   "author": "",
